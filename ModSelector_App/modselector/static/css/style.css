@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700");
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Popins", sans-serif;
+  color: #222;
+}
+/*--- Image slider --*/
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+/*--- jumbotron --*/
+.jumbotron {
+  padding: 1rem;
+  border-radius: 0;
+}
+.my-row {
+  border: 1px solid grey;
+}
+/*--- Footer --*/
+.footer {
+  background: #222;
+  color: white;
+}
+
+/*=-Copyright-=*/
+.copyright {
+  background-color: #222;
+  padding: 12px 0;
+  font-size: 14px;
+}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block main %}
+<!-- display tours for the specific city -->
+<section>
+  <div class="row jumbotron">
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+      <h1 class="display-9">Explore Whats in stock.</h1>
+      <p class="lead">
+        At ModSelector we are passinate about electronic music and the tools
+        that empowers Musicans to explore their creativity. In our store you can
+        find a wide range of Eurorack Modules from the most sought after
+        Manufacturers.
+      </p>
+    </div>
+  </div>
+
+  <div class="card-columns">
+    <!-- each tour is a bootstrap card -->
+    {% for product in products%}
+    <div class="card">
+      <img
+        class="card-img-top"
+        src="{{url_for('static', filename='img/'+product.image)}}"
+        alt="Card image"
+      />
+      <div class="card-body">
+        <h4 class="card-title">{{product.name}}</h4>
+        <h5 class="card-title"><b>${{product.price}}</b></h5>
+        <p class="card-text">{{product.description}}</p>
+      </div>
+      <div class="card-footer">
+        <a
+          href="{{ url_for('main.order', product_id=product.id) }}"
+          class="btn btn-success"
+          ><i class="fas fa-shopping-cart"></i
+        ></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
